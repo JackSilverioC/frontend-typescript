@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body class="bg-zinc-900 text-white">
+    <div class="flex flex-row justify-center items-center w-full gap-4">
+      <div
+        class="flex flex-col justify-center items-center h-screen gap-2 max-w-md w-full"
+      >
+        <h1 class="text-2xl">Tareas</h1>
+        <form
+          id="taskForm"
+          class="bg-zinc-800 flex flex-col gap-4 p-8 rounded-md w-full"
+        >
+          <label for="title">Título:</label>
+          <input
+            type="text"
+            name="title"
+            placeholder="Escribe un título"
+            class="bg-zinc-600 rounded-md text-white py-2 px-4"
+            required
+          />
+
+          <label for="description">Descripción:</label>
+          <textarea
+            name="description"
+            placeholder="Escribe una descripción"
+            rows="3"
+            class="bg-zinc-600 rounded-md text-white py-2 px-4"
+            style="resize: none"
+            required
+          ></textarea>
+
+          <button class="bg-blue-900 rounded-md p-2 hover:bg-blue-800">
+            Guardar
+          </button>
+        </form>
+      </div>
+
+      <div
+        class="bg-zinc-600 w-full max-w-md h-[calc(520px)] rounded-md p-2 overflow-y-scroll flex flex-col gap-2 font-bold"
+      >
+        <div class="text-center">Lista de tareas</div>
+        <div id="taskList" class="flex flex-col gap-2"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
